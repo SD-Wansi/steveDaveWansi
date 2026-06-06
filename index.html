@@ -1,1 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Jane Smith | Researcher</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8fafc;
+    color:#333;
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    padding:20px 0;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#93c5fd;
+}
+
+.hero{
+    background:linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),
+    url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.profile-img{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    border:6px solid white;
+    object-fit:cover;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.hero-text h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero-text h2{
+    color:#93c5fd;
+    margin-bottom:20px;
+    font-weight:400;
+}
+
+.hero-text p{
+    font-size:1.1rem;
+    max-width:700px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 28px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.2rem;
+    color:#1e3a8a;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#1e3a8a;
+}
+
+.research-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.research-item{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.research-item:hover{
+    transform:translateY(-5px);
+}
+
+.publication{
+    margin-bottom:20px;
+    padding:20px;
+    background:white;
+    border-left:5px solid #2563eb;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.timeline{
+    display:grid;
+    gap:20px;
+}
+
+.timeline-item{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact{
+    background:#0f172a;
+    color:white;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact a{
+    color:#93c5fd;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#cbd5e1;
+}
+
+@media(max-width:768px){
+
+.hero-content{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.profile-img{
+    margin:auto;
+}
+
+.about-grid,
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+.hero-text h1{
+    font-size:2.2rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">Research Portfolio</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+
+<img src="https://via.placeholder.com/500" alt="Researcher Photo" class="profile-img">
+
+<div class="hero-text">
+<h1>Dr. Jane Smith</h1>
+<h2>Artificial Intelligence & Data Science Researcher</h2>
+
+<p>
+I am a researcher specializing in machine learning,
+artificial intelligence, data analytics, and scientific
+computing. My work focuses on developing innovative
+solutions that bridge theory and real-world applications.
+</p>
+
+<a href="#contact" class="btn">Contact Me</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+
+<div class="section-title">
+<h2>About Me</h2>
+</div>
+
+<div class="about-grid">
+
+<div class="card">
+<h3>Biography</h3>
+<p>
+Replace this section with your biography. Include your
+academic background, current affiliation, research interests,
+and career highlights.
+</p>
+</div>
+
+<div class="card">
+<h3>Research Interests</h3>
+<ul>
+<li>Artificial Intelligence</li>
+<li>Machine Learning</li>
+<li>Deep Learning</li>
+<li>Computer Vision</li>
+<li>Natural Language Processing</li>
+<li>Data Science</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="research">
+<div class="container">
+
+<div class="section-title">
+<h2>Research Projects</h2>
+</div>
+
+<div class="research-grid">
+
+<div class="research-item">
+<h3>Project One</h3>
+<p>
+Brief description of your research project,
+objectives, methods, and impact.
+</p>
+</div>
+
+<div class="research-item">
+<h3>Project Two</h3>
+<p>
+Brief description of your research project,
+objectives, methods, and impact.
+</p>
+</div>
+
+<div class="research-item">
+<h3>Project Three</h3>
+<p>
+Brief description of your research project,
+objectives, methods, and impact.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="publications">
+<div class="container">
+
+<div class="section-title">
+<h2>Selected Publications</h2>
+</div>
+
+<div class="publication">
+<strong>Smith, J.</strong> (2025).
+Title of Journal Article.
+<em>Journal of Artificial Intelligence Research</em>.
+</div>
+
+<div class="publication">
+<strong>Smith, J.</strong> (2024).
+Title of Conference Paper.
+<em>International Conference on Machine Learning</em>.
+</div>
+
+<div class="publication">
+<strong>Smith, J.</strong> (2023).
+Title of Research Paper.
+<em>Nature Computational Science</em>.
+</div>
+
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+
+<div class="section-title">
+<h2>Academic Experience</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Senior Research Scientist</h3>
+<p>University / Research Center • 2023–Present</p>
+</div>
+
+<div class="timeline-item">
+<h3>Postdoctoral Researcher</h3>
+<p>University Name • 2021–2023</p>
+</div>
+
+<div class="timeline-item">
+<h3>PhD in Computer Science</h3>
+<p>University Name • 2017–2021</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2 style="color:white;">Contact</h2>
+</div>
+
+<div class="contact-grid">
+
+<div>
+<h3>Get in Touch</h3>
+<p>Email: your.email@university.edu</p>
+<p>Phone: +33 XX XX XX XX XX</p>
+<p>Paris, France</p>
+</div>
+
+<div>
+<h3>Professional Links</h3>
+<p><a href="#">Google Scholar</a></p>
+<p><a href="#">ORCID</a></p>
+<p><a href="#">ResearchGate</a></p>
+<p><a href="#">GitHub</a></p>
+<p><a href="#">LinkedIn</a></p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>
+© 2026 Dr. Jane Smith | Research Portfolio Website
+</p>
+</footer>
+
+</body>
+</html>
